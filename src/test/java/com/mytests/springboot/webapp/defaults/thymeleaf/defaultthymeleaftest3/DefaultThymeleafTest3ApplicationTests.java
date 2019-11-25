@@ -18,12 +18,12 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class DefaultThymeleafTest3ApplicationTests {
 
 
-	@Autowired
-	private MockMvc mvc;
+    @Autowired
+    private MockMvc mvc;
 
-	@Test
-	public void contextLoads() throws Exception {
-		mvc.perform(get("/").accept(MediaType.TEXT_HTML)).andExpect(status().isOk()).andExpect(view().name("home"));
-	}
+    @Test
+    public void contextLoads() throws Exception {
+        mvc.perform(get("/").accept(MediaType.TEXT_HTML)).andExpect(status().isOk()).andExpect(view().name("home"));
+    }
 
 }
