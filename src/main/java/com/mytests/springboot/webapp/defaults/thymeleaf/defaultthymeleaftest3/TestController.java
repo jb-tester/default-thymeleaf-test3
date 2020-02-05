@@ -16,7 +16,7 @@ public class TestController {
         return "data";
     }
 
-    @GetMapping("/${urlProperty:hello}")
+    @GetMapping("/ttt/${urlProperty}")
     public String getHello() {
 
 
