@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/test")
-public class TestController {
+public class TestController extends TestParent {
 
     @GetMapping()
     public String demo() {
@@ -34,6 +34,14 @@ public class TestController {
     public String bar(@PathVariable String bbb) {
 
         return "bar"+bbb;
+    }
+    @RequestMapping(Util.UTIL_CONST)
+    public String foobar(@PathVariable String dummy){
+        return "foobar";
+    }
+    @RequestMapping(PARENT_CONST)
+    public String boo(@PathVariable String dummy2){
+        return "boo";
     }
 
 }
