@@ -1,10 +1,11 @@
 package com.mytests.springboot.webapp.defaults.thymeleaf.defaultthymeleaftest3;
 
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.ArrayList;
@@ -22,8 +23,8 @@ public class MyController {
     @RequestMapping("/")
     public String Method(ModelMap model) {
         model.addAttribute("home_attr1", "test0");
-        model.addAttribute("home_attr2", "this is default thymeleaf configuration test");
-        Person[] persons = getPeople().toArray(new Person[0]);
+        model.addAttribute("home_attr2", "this is default thymeleaf configuration test!");
+        List<Person> persons = getPeople();
         model.addAttribute("persons", persons);
         return "home";
     }
